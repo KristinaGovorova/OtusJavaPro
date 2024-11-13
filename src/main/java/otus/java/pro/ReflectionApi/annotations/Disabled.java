@@ -1,4 +1,4 @@
-package ReflectionApi.annotations;
+package otus.java.pro.ReflectionApi.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

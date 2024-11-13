@@ -1,4 +1,4 @@
-package ReflectionApi.annotations;
+package otus.java.pro.ReflectionApi.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -8,5 +8,5 @@ import java.lang.annotation.ElementType;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface BeforeSuite {
+public @interface AfterSuite {
 }

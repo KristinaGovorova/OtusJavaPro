@@ -1,9 +1,9 @@
-package ReflectionApi;
+package otus.java.pro.ReflectionApi;
 
-import ReflectionApi.annotations.AfterSuite;
-import ReflectionApi.annotations.BeforeSuite;
-import ReflectionApi.annotations.Disabled;
-import ReflectionApi.annotations.Test;
+import otus.java.pro.ReflectionApi.annotations.AfterSuite;
+import otus.java.pro.ReflectionApi.annotations.BeforeSuite;
+import otus.java.pro.ReflectionApi.annotations.Disabled;
+import otus.java.pro.ReflectionApi.annotations.Test;
 
 public class TestSuite {
 

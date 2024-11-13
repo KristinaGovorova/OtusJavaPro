@@ -1,4 +1,4 @@
-package ReflectionApi;
+package otus.java.pro.ReflectionApi;
 
 
 import java.lang.reflect.InvocationTargetException;
