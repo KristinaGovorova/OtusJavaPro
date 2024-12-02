@@ -2,64 +2,70 @@
 2024-11-19 22:18:45 INFO  [main] otus.java.pro.Singleton.ItemsSertviceProxy (ItemsSertviceProxy.java:23) - Creating completed!
 2024-11-19 22:18:45 INFO  [main] otus.java.pro.Singleton.ItemsSertviceProxy (ItemsSertviceProxy.java:37) - Doubling items prices.
 2024-11-19 22:18:53 INFO  [main] otus.java.pro.Singleton.ItemsSertviceProxy (ItemsSertviceProxy.java:40) - Doubling completed!
-2024-11-21 21:05:26 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:05:26 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
-2024-11-21 21:05:52 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:05:52 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
-2024-11-21 21:07:55 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:09:37 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:11:23 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:11:54 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:12:13 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:12:32 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:12:48 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:14:19 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:14:59 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:16:04 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:16:27 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:17:32 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:17:50 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:18:06 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:18:37 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:18:45 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:18:54 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:18:55 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
-2024-11-21 21:19:00 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:20:44 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:20:50 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
-2024-11-21 21:20:56 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:22:14 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
-2024-11-21 21:22:21 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:22:46 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:24:39 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:25:02 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:25:18 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:25:22 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:25:35 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:25:43 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:26:12 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:27:24 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:27:35 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:37:06 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:55:41 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:58:36 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 21:58:37 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
-2024-11-21 21:58:42 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 22:05:21 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 22:05:31 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 22:06:00 INFO  [main] otus.java.pro.DBInteractions.migration.DbMigrator (DbMigrator.java:38) - Migration %s applied
-2024-11-21 22:06:01 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
-2024-11-21 22:07:22 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-21 22:07:22 INFO  [main] otus.java.pro.DBInteractions.migration.DbMigrator (DbMigrator.java:40) - Migration src\main\java\otus\java\pro\DBInteractions\migration_scripts\dbinit.sql skipped. Already applied!
-2024-11-21 22:07:22 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
-2024-11-27 20:58:42 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-27 20:58:42 INFO  [main] otus.java.pro.DBInteractions.migration.DbMigrator (DbMigrator.java:40) - Migration src\main\java\otus\java\pro\DBInteractions\migration_scripts\dbinit.sql skipped. Already applied!
-2024-11-27 20:58:42 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
-2024-11-27 20:58:42 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-27 20:58:42 INFO  [main] otus.java.pro.DBInteractions.migration.DbMigrator (DbMigrator.java:40) - Migration src\main\java\otus\java\pro\DBInteractions\migration_scripts\dbinit.sql skipped. Already applied!
-2024-11-27 20:58:42 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
-2024-11-27 21:01:13 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-27 21:01:13 INFO  [main] otus.java.pro.DBInteractions.migration.DbMigrator (DbMigrator.java:40) - Migration src\main\java\otus\java\pro\DBInteractions\migration_scripts\dbinit.sql skipped. Already applied!
-2024-11-27 21:01:13 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
-2024-11-27 21:01:13 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
-2024-11-27 21:01:13 INFO  [main] otus.java.pro.DBInteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-11-21 21:05:26 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:05:26 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-11-21 21:05:52 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:05:52 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-11-21 21:07:55 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:09:37 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:11:23 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:11:54 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:12:13 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:12:32 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:12:48 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:14:19 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:14:59 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:16:04 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:16:27 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:17:32 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:17:50 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:18:06 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:18:37 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:18:45 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:18:54 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:18:55 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-11-21 21:19:00 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:20:44 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:20:50 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-11-21 21:20:56 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:22:14 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-11-21 21:22:21 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:22:46 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:24:39 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:25:02 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:25:18 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:25:22 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:25:35 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:25:43 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:26:12 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:27:24 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:27:35 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:37:06 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:55:41 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:58:36 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 21:58:37 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-11-21 21:58:42 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 22:05:21 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 22:05:31 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 22:06:00 INFO  [main] otus.java.pro.dbinteractions.migration.DbMigrator (DbMigrator.java:38) - Migration %s applied
+2024-11-21 22:06:01 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-11-21 22:07:22 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-21 22:07:22 INFO  [main] otus.java.pro.dbinteractions.migration.DbMigrator (DbMigrator.java:40) - Migration src\main\java\otus\java\pro\DBInteractions\migration_scripts\dbinit.sql skipped. Already applied!
+2024-11-21 22:07:22 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-11-27 20:58:42 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-27 20:58:42 INFO  [main] otus.java.pro.dbinteractions.migration.DbMigrator (DbMigrator.java:40) - Migration src\main\java\otus\java\pro\DBInteractions\migration_scripts\dbinit.sql skipped. Already applied!
+2024-11-27 20:58:42 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-11-27 20:58:42 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-27 20:58:42 INFO  [main] otus.java.pro.dbinteractions.migration.DbMigrator (DbMigrator.java:40) - Migration src\main\java\otus\java\pro\DBInteractions\migration_scripts\dbinit.sql skipped. Already applied!
+2024-11-27 20:58:42 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-11-27 21:01:13 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-27 21:01:13 INFO  [main] otus.java.pro.dbinteractions.migration.DbMigrator (DbMigrator.java:40) - Migration src\main\java\otus\java\pro\DBInteractions\migration_scripts\dbinit.sql skipped. Already applied!
+2024-11-27 21:01:13 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-11-27 21:01:13 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:33) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-11-27 21:01:13 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:53) - От БД отключились
+2024-12-02 21:55:18 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:32) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-12-02 21:55:26 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:32) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-12-02 21:55:26 INFO  [main] otus.java.pro.dbinteractions.migration.DbMigrator (DbMigrator.java:37) - Migration src\main\java\otus\java\pro\DBInteractions\migration_scripts\dbinit.sql skipped. Already applied!
+2024-12-02 21:55:26 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:52) - От БД отключились
+2024-12-02 21:55:26 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:32) - Установлено соединение с БД: jdbc:h2:file:./db;MODE=PostgreSQL
+2024-12-02 21:55:26 INFO  [main] otus.java.pro.dbinteractions.dbconnection.DataSource (DataSource.java:52) - От БД отключились

@@ -1,8 +1,7 @@
-package otus.java.pro.DBInteractions.dbconnection;
+package otus.java.pro.dbinteractions.dbconnection;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import otus.java.pro.ReflectionApi.TestRunner;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

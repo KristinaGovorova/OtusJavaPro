@@ -1,17 +1,14 @@
-package otus.java.pro.DBInteractions.migration;
+package otus.java.pro.dbinteractions.migration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import otus.java.pro.DBInteractions.dbconnection.DataSource;
+import otus.java.pro.dbinteractions.dbconnection.DataSource;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Arrays;

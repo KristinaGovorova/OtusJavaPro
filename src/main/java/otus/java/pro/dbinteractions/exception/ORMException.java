@@ -1,4 +1,4 @@
-package otus.java.pro.DBInteractions.exception;
+package otus.java.pro.dbinteractions.exception;
 
 public class ORMException extends RuntimeException {
     public ORMException(String message) {

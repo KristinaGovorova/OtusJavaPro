@@ -1,12 +1,12 @@
-package otus.java.pro.DBInteractions;
+package otus.java.pro.dbinteractions;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import otus.java.pro.DBInteractions.annotation.RepositoryField;
-import otus.java.pro.DBInteractions.annotation.RepositoryIdField;
-import otus.java.pro.DBInteractions.annotation.RepositoryTable;
-import otus.java.pro.DBInteractions.dbconnection.DataSource;
-import otus.java.pro.DBInteractions.exception.ORMException;
+import otus.java.pro.dbinteractions.annotation.RepositoryField;
+import otus.java.pro.dbinteractions.annotation.RepositoryIdField;
+import otus.java.pro.dbinteractions.annotation.RepositoryTable;
+import otus.java.pro.dbinteractions.dbconnection.DataSource;
+import otus.java.pro.dbinteractions.exception.ORMException;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -30,9 +30,7 @@ public class AbstractRepository<T> {
     private PreparedStatement psDeleteById;
     private PreparedStatement psFindAll;
     private PreparedStatement psFindById;
-    private List<Field> cachedFields;
-    private final List<Method> fieldsGetters = new ArrayList<>();
-    private final List<Method> fieldsSetters = new ArrayList<>();
+    private List<FieldInfo> cachedFields;
     private Field idField;
     private Method idGetter;
     private Method idSetter;
@@ -45,10 +43,10 @@ public class AbstractRepository<T> {
 
     public void save(T entity) {
         try {
-            for (int i = 0; i < fieldsGetters.size(); i++) {
-                Method getter = fieldsGetters.get(i);
-                Object value = getter.invoke(entity);
-                psInsert.setObject(i + 1, value);
+            int paramIndex = 1;
+            for (FieldInfo fieldInfo : cachedFields) {
+                Object value = fieldInfo.getGetter().invoke(entity);
+                psInsert.setObject(paramIndex++, value);
             }
             psInsert.executeUpdate();
         } catch (SQLException | IllegalAccessException | InvocationTargetException e) {
@@ -56,49 +54,14 @@ public class AbstractRepository<T> {
         }
     }
 
-    private void prepareInsert(Class cls) {
-        if (!cls.isAnnotationPresent(RepositoryTable.class)) {
-            throw new ORMException("Класс не предназначен для создания репозитория, не хватает аннотации @RepositoryTable");
-        }
-        String tableName = ((RepositoryTable) cls.getAnnotation(RepositoryTable.class)).value();
-        StringBuilder query = new StringBuilder("insert into ");
-        query.append(tableName).append(" (");
-        // 'insert into users ('
-        cachedFields = Arrays.stream(cls.getDeclaredFields())
-                .filter(f -> f.isAnnotationPresent(RepositoryField.class))
-                .filter(f -> !f.isAnnotationPresent(RepositoryIdField.class))
-                .collect(Collectors.toList());
-        for (Field f : cachedFields) { // TODO заменить на использование геттеров
-            f.setAccessible(true);
-        }
-        for (Field f : cachedFields) {
-            query.append(f.getName()).append(", ");
-        }
-        // 'insert into users (login, password, nickname, '
-        query.setLength(query.length() - 2);
-        query.append(") values (");
-        // 'insert into users (login, password, nickname) values ('
-        for (Field f : cachedFields) {
-            query.append("?, ");
-        }
-        query.setLength(query.length() - 2);
-        query.append(");");
-        // 'insert into users (login, password, nickname) values (?, ?, ?);'
-        try {
-            psInsert = dataSource.getConnection().prepareStatement(query.toString());
-        } catch (SQLException e) {
-            throw new ORMException("Не удалось проинициализировать репозиторий для класса " + cls.getName());
-        }
-    }
-    
     public void update(T entity) {
         try {
-            for (int i = 0; i < fieldsGetters.size(); i++) {
-                Method getter = fieldsGetters.get(i);
-                Object value = getter.invoke(entity);
-                psUpdate.setObject(i + 1, value);
+            int paramIndex = 1;
+            for (FieldInfo fieldInfo : cachedFields) {
+                Object value = fieldInfo.getGetter().invoke(entity);
+                psUpdate.setObject(paramIndex++, value);
             }
-            psUpdate.setObject(fieldsGetters.size() + 1, idGetter.invoke(entity));
+            psUpdate.setObject(paramIndex, idGetter.invoke(entity));
             psUpdate.executeUpdate();
         } catch (SQLException | IllegalAccessException | InvocationTargetException e) {
             throw new ORMException("Не удалось обновить объект: " + entity, e);
@@ -110,11 +73,17 @@ public class AbstractRepository<T> {
             psFindById.setLong(1, id);
             try (ResultSet rs = psFindById.executeQuery()) {
                 if (rs.next()) {
-                    T entity = mapResultSetToEntity(rs);
+                    T entity = cls.getDeclaredConstructor().newInstance();
+                    for (FieldInfo fieldInfo : cachedFields) {
+                        Object value = rs.getObject(fieldInfo.getColumnName());
+                        fieldInfo.getSetter().invoke(entity, value);
+                    }
+                    idSetter.invoke(entity, rs.getObject(getIdName()));
                     return Optional.of(entity);
                 }
             }
-        } catch (SQLException e) {
+        } catch (SQLException | InstantiationException | IllegalAccessException | InvocationTargetException |
+                 NoSuchMethodException e) {
             throw new ORMException("Не удалось найти объект с id = " + id, e);
         }
         return Optional.empty();
@@ -136,10 +105,10 @@ public class AbstractRepository<T> {
             throw new ORMException("Не удалось удалить объект с id = " + id, e);
         }
     }
-    
-        private void prepareStatements() {
+
+    private void prepareStatements() {
         if (!cls.isAnnotationPresent(RepositoryTable.class)) {
-            throw new ORMException("Class " + cls.getName() + " not annotated with @RepositoryTable");
+            throw new ORMException("У класса " + cls.getName() + " нет аннотации @RepositoryTable");
         }
 
         String tableName = getTableName();
@@ -149,38 +118,37 @@ public class AbstractRepository<T> {
 
         cachedFields = Arrays.stream(cls.getDeclaredFields())
                 .filter(f -> f.isAnnotationPresent(RepositoryField.class))
+                .map(f -> {
+                    String fieldName = f.getName();
+                    String getterMethodName = "get" + capitalizeFirstLetter(fieldName);
+                    String setterMethodName = "set" + capitalizeFirstLetter(fieldName);
+                    String columnName = f.getAnnotation(RepositoryField.class).value();
+                    try {
+                        Method getterMethod = cls.getMethod(getterMethodName);
+                        Method setterMethod = cls.getMethod(setterMethodName, f.getType());
+                        return new FieldInfo(f, getterMethod, setterMethod, columnName.isBlank() ? fieldName : columnName);
+                    } catch (NoSuchMethodException e) {
+                        throw new ORMException("Не объявлен getter или setter для поля: " + fieldName, e);
+                    }
+                })
                 .collect(Collectors.toList());
 
         if (cachedFields.isEmpty()) {
-            throw new ORMException("No fields mapped with annotation @RepositoryField in class: "
+            throw new ORMException("Не существует полей с аннотацией @RepositoryField в классе: "
                     + cls.getName());
-        }
-
-        for (Field field : cachedFields) {
-            String fieldName = field.getName();
-            String getterMethodName = "get" + capitalizeFirstLetter(fieldName);
-            String setterMethodName = "set" + capitalizeFirstLetter(fieldName);
-            try {
-                Method getterMethod = cls.getMethod(getterMethodName);
-                fieldsGetters.add(getterMethod);
-                Method setterMethod = cls.getMethod(setterMethodName, field.getType());
-                fieldsSetters.add(setterMethod);
-            } catch (NoSuchMethodException e) {
-                throw new ORMException("No getter or setter method found for field: " + fieldName, e);
-            }
         }
 
         idField = Arrays.stream(cls.getDeclaredFields())
                 .filter(f -> f.isAnnotationPresent(RepositoryIdField.class))
                 .findFirst()
-                .orElseThrow(() -> new ORMException("Class " + cls.getName() + " doesn't have id"));
+                .orElseThrow(() -> new ORMException("У класса " + cls.getName() + " нет поля id"));
 
         try {
             String idFieldName = idField.getName();
             idGetter = cls.getMethod("get" + capitalizeFirstLetter(idFieldName));
             idSetter = cls.getMethod("set" + capitalizeFirstLetter(idFieldName), idField.getType());
         } catch (NoSuchMethodException e) {
-            throw new ORMException("No getter or setter method found for id field: " + idField.getName(), e);
+            throw new ORMException("Не объявлен getter или setter для поля: " + idField.getName(), e);
         }
 
         try {
@@ -201,7 +169,7 @@ public class AbstractRepository<T> {
             String deleteByIdQuery = generateDeleteByIdQuery(tableName);
             psDeleteById = connection.prepareStatement(deleteByIdQuery);
         } catch (SQLException e) {
-            throw new ORMException("Error preparing SQL-queries for class " + cls.getName(), e);
+            throw new ORMException("Произошла ошибка при выполнения SQL-запроса " + cls.getName(), e);
         }
     }
 
@@ -212,18 +180,22 @@ public class AbstractRepository<T> {
 
     private String generateInsertQuery(String tableName) {
         StringBuilder query = new StringBuilder("INSERT INTO " + tableName + " (");
-        cachedFields.forEach(field -> query.append(getColumnName(field)).append(", "));
+        StringBuilder values = new StringBuilder(") VALUES (");
+        for (FieldInfo fieldInfo : cachedFields) {
+            query.append(fieldInfo.getColumnName()).append(", ");
+            values.append("?, ");
+        }
         query.setLength(query.length() - 2);
-        query.append(") VALUES (");
-        cachedFields.forEach(field -> query.append("?, "));
-        query.setLength(query.length() - 2);
-        query.append(")");
+        values.setLength(values.length() - 2);
+        query.append(values).append(")");
         return query.toString();
     }
 
     private String generateUpdateQuery(String tableName) {
         StringBuilder query = new StringBuilder("UPDATE " + tableName + " SET ");
-        cachedFields.forEach(field -> query.append(getColumnName(field)).append(" = ?, "));
+        for (FieldInfo fieldInfo : cachedFields) {
+            query.append(fieldInfo.getColumnName()).append(" = ?, ");
+        }
         query.setLength(query.length() - 2);
         query.append(" WHERE ").append(getIdName()).append(" = ?");
         return query.toString();
@@ -263,10 +235,9 @@ public class AbstractRepository<T> {
     private T mapResultSetToEntity(ResultSet rs) throws SQLException {
         try {
             T entity = cls.getDeclaredConstructor().newInstance();
-            for (int i = 0; i < cachedFields.size(); i++) {
-                String columnName = getColumnName(cachedFields.get(i));
-                Object value = rs.getObject(columnName);
-                fieldsSetters.get(i).invoke(entity, value);
+            for (FieldInfo fieldInfo : cachedFields) {
+                Object value = rs.getObject(fieldInfo.getColumnName());
+                fieldInfo.getSetter().invoke(entity, value);
             }
             idSetter.invoke(entity, rs.getObject(getIdName()));
             return entity;

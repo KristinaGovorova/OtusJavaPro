@@ -1,7 +1,7 @@
-package otus.java.pro.DBInteractions;
+package otus.java.pro.dbinteractions;
 
-import otus.java.pro.DBInteractions.dbconnection.DataSource;
-import otus.java.pro.DBInteractions.migration.DbMigrator;
+import otus.java.pro.dbinteractions.dbconnection.DataSource;
+import otus.java.pro.dbinteractions.migration.DbMigrator;
 
 import java.sql.*;
 import java.util.List;

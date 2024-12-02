@@ -1,9 +1,9 @@
-package otus.java.pro.DBInteractions;
+package otus.java.pro.dbinteractions;
 
 import lombok.*;
-import otus.java.pro.DBInteractions.annotation.RepositoryField;
-import otus.java.pro.DBInteractions.annotation.RepositoryIdField;
-import otus.java.pro.DBInteractions.annotation.RepositoryTable;
+import otus.java.pro.dbinteractions.annotation.RepositoryField;
+import otus.java.pro.dbinteractions.annotation.RepositoryIdField;
+import otus.java.pro.dbinteractions.annotation.RepositoryTable;
 
 @NoArgsConstructor
 @AllArgsConstructor

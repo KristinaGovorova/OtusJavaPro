@@ -1,4 +1,4 @@
-package otus.java.pro.DBInteractions.annotation;
+package otus.java.pro.dbinteractions.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
