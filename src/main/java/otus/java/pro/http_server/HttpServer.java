@@ -1,9 +1,8 @@
-package otus.java.pro.httpServer;
+package otus.java.pro.http_server;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

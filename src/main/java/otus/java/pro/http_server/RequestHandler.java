@@ -1,4 +1,4 @@
-package otus.java.pro.httpServer;
+package otus.java.pro.http_server;
 
 import java.io.*;
 import java.net.Socket;
@@ -19,12 +19,7 @@ public class RequestHandler implements Runnable {
         try (BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
              PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true)) {
 
-            String requestLine = in.readLine();
-            if (requestLine == null) {
-                sendErrorResponse(out, 500);
-                return;
-            }
-            String[] requestParts = requestLine.split(" ");
+            String[] requestParts = in.readLine().split(" ");
             if (requestParts.length < 2) {
                 sendErrorResponse(out, 500);
                 return;
@@ -32,12 +27,22 @@ public class RequestHandler implements Runnable {
             String method = requestParts[0];
             String uri = requestParts[1];
             Map<String, String> headers = new HashMap<>();
-            String line;
-            while (!(line = in.readLine()).isEmpty()) {
+            while (true) {
+                String line = in.readLine();
+                if (line == null || line.isEmpty()) {
+                    break;
+                }
                 String[] headerParts = line.split(": ", 2);
                 if (headerParts.length == 2) {
                     headers.put(headerParts[0], headerParts[1]);
                 }
+            }
+            String contentLengthHeader = headers.get("Content-Length");
+            if (contentLengthHeader != null) {
+                int contentLength = Integer.parseInt(contentLengthHeader);
+                char[] body = new char[contentLength];
+                in.read(body, 0, contentLength);
+                String requestBody = new String(body);
             }
             if ("GET".equals(method) && "/shutdown".equals(uri)) {
                 server.stop();
@@ -62,7 +67,7 @@ public class RequestHandler implements Runnable {
     }
 
     private void sendResponse(PrintWriter out, int statusCode, String message) {
-        out.println("HTTP/1.1 " + statusCode + " " + getStatusMessage(statusCode));
+        out.println("HTTP/1.1 " + statusCode + " " + StatusCodes.getMessageByCode(statusCode));
         out.println("Content-Type: text/plain");
         out.println("Content-Length: " + message.length());
         out.println();
@@ -70,18 +75,7 @@ public class RequestHandler implements Runnable {
     }
 
     private void sendErrorResponse(PrintWriter out, int statusCode) {
-        String message = getStatusMessage(statusCode);
+        String message = StatusCodes.getMessageByCode(statusCode);
         sendResponse(out, statusCode, message);
-    }
-
-    private String getStatusMessage(int statusCode) {
-        switch (statusCode) {
-            case 200:
-                return "OK";
-            case 500:
-                return "Internal Server Error";
-            default:
-                return "Unknown Status";
-        }
     }
 }

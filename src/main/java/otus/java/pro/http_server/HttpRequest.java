@@ -1,4 +1,4 @@
-package otus.java.pro.httpServer;
+package otus.java.pro.http_server;
 
 import java.util.Map;
 

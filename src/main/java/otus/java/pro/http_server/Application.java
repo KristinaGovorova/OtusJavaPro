@@ -1,6 +1,5 @@
-package otus.java.pro.httpServer;
+package otus.java.pro.http_server;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.io.InputStream;
