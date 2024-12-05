@@ -11,9 +11,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0' // Для Tomcat 11
-    implementation 'org.slf4j:slf4j-api:1.7.32' // SLF4J API
-    implementation 'ch.qos.logback:logback-classic:1.2.6' // Logback
+    implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'ch.qos.logback:logback-classic:1.2.6'
 }
 
 
@@ -24,7 +24,7 @@ war {
 tasks.register('deployWar', Copy) {
     dependsOn(tasks.named('war'))
     from(tasks.named('war').map { it.outputs.files.singleFile })
-    into('C:\\Users\\slava\\Downloads\\apache-tomcat-11.0.1\\webapps')
+    into('C:\\Downloads\\apache-tomcat-11.0.1\\webapps')
 }
 
 test {
