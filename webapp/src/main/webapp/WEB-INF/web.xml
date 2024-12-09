@@ -18,7 +18,7 @@
 
     <servlet>
         <servlet-name>SubtractServlet</servlet-name>
-        <servlet-class>web.SubtractServlet</servlet-class>
+        <servlet-class>ru.tele2.govorova.java.pro.webapp.SubtractServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -28,7 +28,7 @@
 
     <servlet>
         <servlet-name>MultiplyServlet</servlet-name>
-        <servlet-class>web.MultiplyServlet</servlet-class>
+        <servlet-class>ru.tele2.govorova.java.pro.webapp.MultiplyServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -38,7 +38,7 @@
 
     <servlet>
         <servlet-name>DivServlet</servlet-name>
-        <servlet-class>web.DivServlet</servlet-class>
+        <servlet-class>ru.tele2.govorova.java.pro.webapp.DivServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
