@@ -17,6 +17,19 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.28'
     annotationProcessor 'org.projectlombok:lombok:1.18.28'
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.4'
+    implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'ch.qos.logback:logback-classic:1.2.6'
+}
+
+war {
+    archiveFileName = 'calculator.war'
+}
+
+tasks.register('deployWar', Copy) {
+    dependsOn(tasks.named('war'))
+    from(tasks.named('war').map { it.outputs.files.singleFile })
+    into('C:\\Downloads\\apache-tomcat-11.0.1\\webapps')
 }
 
 test {
