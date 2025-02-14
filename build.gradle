@@ -20,6 +20,8 @@ dependencies {
     implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
     implementation 'org.slf4j:slf4j-api:1.7.32'
     implementation 'ch.qos.logback:logback-classic:1.2.6'
+    implementation 'org.hibernate.orm:hibernate-core:6.5.2.Final'
+    implementation 'com.h2database:h2:2.3.232'
 }
 
 war {
@@ -30,6 +32,10 @@ tasks.register('deployWar', Copy) {
     dependsOn(tasks.named('war'))
     from(tasks.named('war').map { it.outputs.files.singleFile })
     into('C:\\Downloads\\apache-tomcat-11.0.1\\webapps')
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 test {
